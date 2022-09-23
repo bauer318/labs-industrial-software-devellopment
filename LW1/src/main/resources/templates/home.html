@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="htpp://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link th:href="@{/homeStyle.css}" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to</h1>
+    <div class="description_head">
+        <div class="description_class">
+            <p>Лека́рственные расте́ния (лат. plantae medicinalis) — дикорастущие и культивируемые растения, применяемые для профилактики и
+                лечения заболеваний человека и животных. Система лечения лекарственными растениями называется фитотерапией</p>
+            <p>Возможность использования растений в лечебных целях зависит от вида медицины, в которой они используются
+                (официальной или народной). Например, в системе здравоохранения
+                России могут использоваться только те лекарственные растения, которые включены в Государственный реестр лекарственных средств</p>
+        </div>
+        <div class="picture_class">
+            <img th:src="@{/image/Digitalis_purpurea.jpg}">
+        </div>
+    </div>
+    <h3>Список нескольких трав</h3>
+    <table>
+        <th>Название</th>
+        <th>Вид рода</th>
+        <th>Семейства</th>
+        <th>Распронение</th>
+        <div th:each="medicinalHerb:${medicinalHerbs}">
+            <tr >
+                <td><span th:text="${medicinalHerb.name}"> Name </span></td>
+                <td><span th:text="${medicinalHerb.genusType}"> GenusType </span></td>
+                <td><span th:text="${medicinalHerb.family}"> Family </span></td>
+                <td><span th:text="${medicinalHerb.distribution}"> Distribution </span></td>
+            </tr>
+        </div>
+    </table>
+</body>
+</html>
