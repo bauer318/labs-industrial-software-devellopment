@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="htpp://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add medicinal herb</title>
+    <style>
+        span{
+            color: red;
+        }
+        input{
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <form th:method="post" th:action="@{/}" th:object="${medicinalHerb}">
+        <div>
+            <label for="name">Название</label>
+            <input id="name" type="text" th:field="*{name}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</span>
+            <br/>
+            <label for="genusType">Вид рода</label>
+            <input id="genusType" type="text" th:field="*{genusType}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('genusType')}" th:errors="*{genusType}">Genus type error</span>
+            <br/>
+            <label for="family">Семейство</label>
+            <input id="family" type="text" th:field="*{family}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('family')}" th:errors="*{family}">Family error</span>
+            <br/>
+            <label for="distribution">Распронение</label>
+            <input id="distribution" type="text" th:field="*{distribution}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('distribution')}" th:errors="*{distribution}">Distribution error</span>
+            <br/>
+            <input type="submit" value="Добавить">
+        </div>
+    </form>
+</body>
+</html>
