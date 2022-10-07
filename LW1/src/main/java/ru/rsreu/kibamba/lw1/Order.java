@@ -1,6 +1,5 @@
 package ru.rsreu.kibamba.lw1;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -14,7 +13,7 @@ public class Order {
     private String medicalHerbName;
 
     @Min(value = 1,message="минимальное количество штук - одно")
-    private int medicalHerbPiece;
+    private int totalPiece;
     private double totalPrice;
     private OrderStatus status;
 }

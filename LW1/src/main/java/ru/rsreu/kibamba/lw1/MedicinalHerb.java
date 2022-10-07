@@ -29,4 +29,7 @@ public class MedicinalHerb {
     @Min(value = 1,message="минимальное количество штук - одно")
     @Max(value = 100, message="максимальное количество штук - сто")
     private int piece;
+    @Min(value = 1, message = "минамальная цена травы - 1")
+    private double price;
+    private String pictureLink;
 }

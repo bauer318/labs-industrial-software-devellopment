@@ -8,4 +8,8 @@ public class Buyer {
     private String telephone;
     @NotBlank(message = "имя покупателя не должно быть пустым")
     private String firstname;
+    @NotBlank(message = "название населеного пункта не должно быть пустым")
+    private String state;
+    @NotBlank(message = "название города не должно быть пустым")
+    private String town;
 }
