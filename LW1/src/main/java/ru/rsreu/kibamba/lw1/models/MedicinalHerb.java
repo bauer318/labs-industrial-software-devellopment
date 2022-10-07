@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.models;
 
 import lombok.*;
 
@@ -31,5 +31,5 @@ public class MedicinalHerb {
     private int piece;
     @Min(value = 1, message = "минамальная цена травы - 1")
     private double price;
-    private String pictureLink;
+    //private String pictureLink;
 }

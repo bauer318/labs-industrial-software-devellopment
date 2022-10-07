@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.models;
 
 public enum OrderStatus {
     MADE,

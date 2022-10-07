@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.models;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

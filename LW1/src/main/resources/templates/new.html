@@ -37,6 +37,16 @@
             <br/>
             <span class="validationError" th:if="${#fields.hasErrors('distribution')}" th:errors="*{distribution}">Distribution error</span>
             <br/>
+            <label for="piece">Штук</label>
+            <input id="piece" type="text" th:field="*{piece}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('piece')}" th:errors="*{piece}">Piece error</span>
+            <br/>
+            <label for="price">Цена</label>
+            <input id="price" type="text" th:field="*{price}">
+            <br/>
+            <span class="validationError" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</span>
+            <br/>
             <input type="submit" value="Добавить">
         </div>
     </form>

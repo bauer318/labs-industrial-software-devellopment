@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.models;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -10,7 +10,7 @@ public class Order {
     private String buyerTelephone;
 
     @NotBlank(message="Название травы не должно быть пустым")
-    private String medicalHerbName;
+    private String medicinalHerbName;
 
     @Min(value = 1,message="минимальное количество штук - одно")
     private int totalPiece;
