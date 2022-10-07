@@ -2,9 +2,7 @@ package ru.rsreu.kibamba.lw1;
 
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 
 @Data
@@ -28,4 +26,7 @@ public class MedicinalHerb {
     @Size(min=5,max=15,message="Распронение должно содержать не менее 5 символов")
     @Pattern(regexp = "[a-zA-ZА-Яа-я][a-zA-ZА-Яа-я0-9_]*",message = "Распронение должно начиать с буквой")
     private  String distribution;
+    @Min(value = 1,message="минимальное количество штук - одно")
+    @Max(value = 100, message="максимальное количество штук - сто")
+    private int piece;
 }
