@@ -13,8 +13,8 @@ import javax.validation.constraints.*;
 @Table(name = "medicinal_herb")
 public class MedicinalHerb {
     @Id
-    @SequenceGenerator(name="ROLLING_EVENT_SEQ$",sequenceName = "ROLLING_EVENT_SEQ$",allocationSize = 1)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "ROLLING_EVENT_SEQ$")
+    //@SequenceGenerator(name="ROLLING_EVENT_SEQ$",sequenceName = "ROLLING_EVENT_SEQ$",allocationSize = 1)
+    //@GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "ROLLING_EVENT_SEQ$")
     @Column(name = "herb_id")
     private  int id;
 
@@ -33,6 +33,7 @@ public class MedicinalHerb {
     @NotEmpty(message="Семейство не должно быть пустым")
     @Size(min=7,max=15,message="Семейство должно содержать от 7 до 35 символов")
     @Pattern(regexp = "[a-zA-ZА-Яа-я][a-zA-ZА-Яа-я0-9_]*",message = "Семейство должно начиать с буквой")
+    @Column(name = "herb_family")
     private  String family;
 
     @NotEmpty(message="Распронение не должно быть пустым")
