@@ -13,8 +13,6 @@ import javax.validation.constraints.*;
 @Table(name = "medicinal_herb")
 public class MedicinalHerb {
     @Id
-    //@SequenceGenerator(name="ROLLING_EVENT_SEQ$",sequenceName = "ROLLING_EVENT_SEQ$",allocationSize = 1)
-    //@GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "ROLLING_EVENT_SEQ$")
     @Column(name = "herb_id")
     private  int id;
 

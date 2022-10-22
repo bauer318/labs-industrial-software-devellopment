@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.rsreu.kibamba.lw1.models.MedicinalHerb;
 import ru.rsreu.kibamba.lw1.repositorys.MedicinalHerbRepository;
 
@@ -19,6 +20,8 @@ public class HomeController {
     public HomeController(MedicinalHerbRepository jdbcMedicinalHerbRepository){
         this.jdbcMedicinalHerbRepository = jdbcMedicinalHerbRepository;
     }
+
+
     @GetMapping("/")
     public String home(Model model){
         model.addAttribute("medicinalHerbs",jdbcMedicinalHerbRepository.findAll());
