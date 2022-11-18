@@ -1,6 +1,8 @@
 package ru.rsreu.kibamba.lw1;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -10,7 +12,10 @@ import javax.validation.constraints.Size;
 @Data
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
+@Document(collection = "MedicinalHerb")
 public class MedicinalHerb {
+    public static final String SEQUENCE = "medicinal_herb_sequence";
+    @Id
     private  int id;
     @NotEmpty(message="Название травы не должно быть пустым")
     @Pattern(regexp = "[a-zA-ZА-Яа-я][a-zA-ZА-Яа-я0-9_]*",message = "Название должно начиать с буквой")

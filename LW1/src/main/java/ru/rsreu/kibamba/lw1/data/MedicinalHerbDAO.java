@@ -1,13 +1,14 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.data;
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.CrudRepository;
+import ru.rsreu.kibamba.lw1.MedicinalHerb;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class MedicinalHerbDAO {
-    private List<MedicinalHerb> medicinalHerbs;
+public interface MedicinalHerbDAO extends MongoRepository<MedicinalHerb, Integer> {
+   /* private List<MedicinalHerb> medicinalHerbs;
     {
         medicinalHerbs = new ArrayList<>();
         medicinalHerbs.add(new MedicinalHerb(1,"Авра́н лека́рственный"," Авран","Норичниковые","Евразия и Северной Америка"));
@@ -23,5 +24,5 @@ public class MedicinalHerbDAO {
     public void save(MedicinalHerb medicinalHerb){
         medicinalHerb.setId(medicinalHerbs.size()+1);
         medicinalHerbs.add(medicinalHerb);
-    }
+    }*/
 }
