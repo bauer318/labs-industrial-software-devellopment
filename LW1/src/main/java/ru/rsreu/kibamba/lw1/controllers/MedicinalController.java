@@ -6,7 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.rsreu.kibamba.lw1.logger.Logger;
+import ru.rsreu.kibamba.lw1.properties.logger.Logger;
 import ru.rsreu.kibamba.lw1.models.MedicinalHerb;
 import ru.rsreu.kibamba.lw1.repositorys.MedicinalHerbRepository;
 

@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1.logger;
+package ru.rsreu.kibamba.lw1.properties.logger;
 
 public interface Logger {
     void info(String info);

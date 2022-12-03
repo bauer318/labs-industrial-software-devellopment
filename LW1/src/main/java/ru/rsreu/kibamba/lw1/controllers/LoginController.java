@@ -5,7 +5,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.rsreu.kibamba.lw1.logger.Logger;
+import ru.rsreu.kibamba.lw1.properties.logger.Logger;
 
 @Controller
 public class LoginController {

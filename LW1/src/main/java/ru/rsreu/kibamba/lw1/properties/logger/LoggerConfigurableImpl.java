@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1.logger;
+package ru.rsreu.kibamba.lw1.properties.logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

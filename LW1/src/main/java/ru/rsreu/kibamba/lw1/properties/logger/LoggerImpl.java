@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1.logger;
+package ru.rsreu.kibamba.lw1.properties.logger;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
