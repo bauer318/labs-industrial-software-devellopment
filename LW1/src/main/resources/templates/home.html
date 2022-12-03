@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-    <link th:href="@{/homeStyle.css}" rel="stylesheet">
+    <style>
+        .description_head{
+            display: flex;
+        }
+        table{
+            width: 100%;
+        }
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>Лека́рственные расте́ния</h1>
@@ -16,25 +26,7 @@
                 (официальной или народной). Например, в системе здравоохранения
                 России могут использоваться только те лекарственные растения, которые включены в Государственный реестр лекарственных средств</p>
         </div>
-        <div class="picture_class">
-            <img th:src="@{/image/Digitalis_purpurea.jpg}">
-        </div>
+        <a th:href="@{/medicinal-herb}">Список всех лекарственных растений</a>
     </div>
-    <h3>Список трав в магазине</h3>
-    <table>
-        <th>Название</th>
-        <th>Вид рода</th>
-        <th>Семейства</th>
-        <th>Распронение</th>
-        <div th:each="medicinalHerb:${medicinalHerbs}">
-            <tr >
-                <td><span th:text="${medicinalHerb.name}"> Name </span></td>
-                <td><span th:text="${medicinalHerb.genusType}"> GenusType </span></td>
-                <td><span th:text="${medicinalHerb.family}"> Family </span></td>
-                <td><span th:text="${medicinalHerb.distribution}"> Distribution </span></td>
-            </tr>
-        </div>
-    </table>
-    <a th:href="@{/new}">Добавить</a>
 </body>
 </html>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.rsreu.kibamba.lw1.controllers.HomeController;
+import ru.rsreu.kibamba.lw1.controllers.MedicinalController;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -16,8 +16,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 @RunWith(SpringRunner.class)
 
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(MedicinalController.class)
+public class MedicinalControllerTest {
 
     @Autowired
     private MockMvc mockMvc; /*Внедряет MockMvc*/

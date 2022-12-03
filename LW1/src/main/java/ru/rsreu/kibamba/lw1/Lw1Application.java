@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import ru.rsreu.kibamba.lw1.models.MedicinalHerb;
 import ru.rsreu.kibamba.lw1.repositorys.MedicinalHerbRepository;
 
@@ -15,11 +16,12 @@ public class Lw1Application {
     public static void main(String[] args) {
         SpringApplication.run(Lw1Application.class, args);
     }
+
     @Bean
     CommandLineRunner run(MedicinalHerbRepository medicinalHerbRepository){
         return args->{
-          medicinalHerbRepository.save(new MedicinalHerb(-1,"АвранАптекарский",
-                  "Авран","Норичниковые","Ервазия",20,20.2,""));
+            medicinalHerbRepository.save(new MedicinalHerb(-1,"АвранАптекарский",
+                    "Авран","Норичниковые","Ервазия",20,20.2,""));
             medicinalHerbRepository.save(new MedicinalHerb(-1,"АгаваАмериканская",
                     "Агава","Спаржевые","Америка",17,8.7,""));
             medicinalHerbRepository.save(new MedicinalHerb(-1,"Бадьян",
