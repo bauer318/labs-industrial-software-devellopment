@@ -1,4 +1,4 @@
-package ru.rsreu.kibamba.lw1;
+package ru.rsreu.kibamba.lw1.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
