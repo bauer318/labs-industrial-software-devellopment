@@ -31,17 +31,18 @@ public class AuthController {
     private final TokenGenerator tokenGenerator;
 
     private final DaoAuthenticationProvider daoAuthenticationProvider;
+    @Qualifier("jwtRefreshTokenAuthProvider")
+    private final JwtAuthenticationProvider refreshTokenAuthProvider;
+
 
     @Autowired
-    public AuthController(UserDetailsManager userDetailsManager, TokenGenerator tokenGenerator, DaoAuthenticationProvider daoAuthenticationProvider) {
+    public AuthController(UserDetailsManager userDetailsManager, TokenGenerator tokenGenerator,
+                          DaoAuthenticationProvider daoAuthenticationProvider,JwtAuthenticationProvider jwtAuthenticationProvider) {
         this.userDetailsManager = userDetailsManager;
         this.tokenGenerator = tokenGenerator;
         this.daoAuthenticationProvider = daoAuthenticationProvider;
+        this.refreshTokenAuthProvider = jwtAuthenticationProvider;
     }
-
-    @Autowired
-    @Qualifier("jwtRefreshTokenAuthProvider")
-    JwtAuthenticationProvider refreshTokenAuthProvider;
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody SignupDTO signupDTO) {
@@ -55,7 +56,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody LoginDTO loginDTO) {
-        Authentication authentication = daoAuthenticationProvider.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(loginDTO.getUsername(), loginDTO.getPassword()));
+        Authentication authentication = daoAuthenticationProvider.authenticate(UsernamePasswordAuthenticationToken.unauthenticated(loginDTO.getUsername(),
+                loginDTO.getPassword()));
 
         return ResponseEntity.ok(tokenGenerator.createToken(authentication));
     }

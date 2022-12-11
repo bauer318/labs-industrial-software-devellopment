@@ -33,13 +33,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Slf4j
 public class WebSecurity {
-
     private final JwtToUserConverter jwtToUserConverter;
     private final KeyUtils keyUtils;
     private final  PasswordEncoder passwordEncoder;
     private final UserDetailsService userDetailsManager;
 
-
+    @Autowired
     public WebSecurity(JwtToUserConverter jwtToUserConverter, KeyUtils keyUtils,PasswordEncoder passwordEncoder,UserDetailsManager userDetailsManager){
         this.jwtToUserConverter = jwtToUserConverter;
         this.keyUtils = keyUtils;

@@ -15,8 +15,12 @@ import ru.rsreu.kibamba.lw1.repository.UserRepository;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+    private final UserRepository userRepository;
+
     @Autowired
-    UserRepository userRepository;
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/{id}")
     @PreAuthorize("#user.id == #id")
